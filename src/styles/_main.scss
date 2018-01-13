@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  font-family: helvetica, arial, sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+h1 {
+  font: 500;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+}
+
+img {
+  width: 3.8rem;
+  height: 3.8rem;
+  display: block;
+}
+
+/* MOBILE */
+@media (max-width: 479px) {
+  html {
+      font-size: 14px;
+  }
+}

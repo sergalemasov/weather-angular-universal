@@ -1,0 +1,164 @@
+:host() {
+  width: 70%;
+  padding: 0.9rem;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+.today-widget__icon-wrapper,
+.daily-row__icon-wrapper {
+  height: 4rem;
+}
+
+.today {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.today__widget {
+  flex: 0 0 35%;
+}
+
+.today__details {
+  flex: 0 0 65%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.today-widget {
+  display: flex;
+  position: relative;
+}
+
+.today-widget__value {
+  padding-right: 1rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
+  height: 4rem;
+  position: relative;
+}
+
+.today-widget__scale {
+  position: absolute;
+  right: 0;
+  top: -0.7rem;
+  font-size: 1rem;
+}
+
+.daily {
+  display: flex;
+  justify-content: space-between;
+}
+
+.daily-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-row__day {
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.daily-row__day,
+.daily-row__icon-wrapper {
+  align-self: center;
+}
+
+.daily-row__pollen,
+.daily-row__degrees {
+  display: flex;
+}
+
+.daily-row__pollen {
+  justify-content: space-around;
+}
+
+.daily-row__degrees {
+  justify-content: space-around;
+}
+
+.daily-row__pollen p,
+.daily-row__degrees p {
+  margin-bottom: 0;
+}
+
+
+.degree-high {
+  font-weight: bold;
+}
+
+/* BOTH MOBILE TABLET */
+@media (max-width: 767px) {
+  .daily {
+      flex-direction: column;
+  }
+
+  .daily-row {
+      flex-direction: row;
+      align-items: center;
+      border-style: solid;
+      border-color: rgba(160, 145, 145, 0.2);
+      border-top-width: 1px;
+      margin: 0 -0.9rem;
+      padding: 0 0.9rem;
+  }
+
+  .daily-row:last-of-type {
+      border-bottom-width: 1px;
+  }
+
+  .daily-row__day,
+  .daily-row__icon-wrapper,
+  .daily-row__degrees,
+  .daily-row__pollen {
+      flex: 0 0 25%;
+  }
+}
+
+/* TABLET */
+@media (min-width: 480px) and (max-width: 767px) {
+  .daily-row__degrees {
+      justify-content: space-around;
+  }
+
+  .daily-row__pollen {
+      justify-content: center;
+  }
+
+  .daily-row__pollen p {
+      margin-right: 0.5rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 479px) {
+  .daily-row__day {
+    font-size: 0.8rem;
+  }
+
+  .daily-row__degrees,
+  .daily-row__pollen
+  {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .today__details {
+    flex-direction: column;
+    align-items: initial;
+
+    & > div > p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .today__widget,
+  .today__details {
+    flex: 0 0 50%;
+  }
+}

@@ -1,0 +1,44 @@
+<h1>{{ requested.location.name }}, {{ requested.location.region }}</h1>
+<div>
+  <p>{{ requested.location.localtime | auDate }}</p>
+  <p>Overcast</p>
+</div>
+<section class="today">
+  <div class="today__widget today-widget">
+    <div class="today-widget__icon-wrapper">
+      <img class="today-widget__icon" [src]="'https://' + requested.current.condition.icon"/>
+    </div>
+      <div class="today-widget__value">
+        {{ requested.current.temp_c | auTemperature }}
+        <div class="today-widget__scale">°C</div>
+      </div>
+  </div>
+  <div class="today__details">
+    <div>
+      <p>Precipipation: {{ requested.current.precip_mm }} mm</p>
+      <p>Humidity: {{ requested.current.humidity }}%</p>
+      <p>Wind: {{ requested.current.wind_kph }} mph {{ requested.current.wind_dir }}</p>
+    </div>
+    <div>
+      <p>Pressure: {{ requested.current.pressure_in }} in</p>
+      <p>Sunrise: {{ sunrise }}</p>
+      <p>Sunset: {{ sunset }}</p>
+    </div>
+  </div>
+</section>
+<ul class="daily" *ngIf="requestedForecast.forecast.forecastday.length">
+  <li class="daily-row" *ngFor="let day of requestedForecast.forecast.forecastday">
+    <p class="daily-row__day">{{ day.date | auDay }}</p>
+    <div class="daily-row__icon-wrapper">
+      <img class="daily-row__icon" [src]="'https://' + day.day.condition.icon"/>
+    </div>
+    <div class="daily-row__degrees">
+      <p class="degree-high">{{ day.day.maxtemp_c | auTemperature }}°</p>
+      <p>{{ day.day.mintemp_c | auTemperature }}°</p>
+    </div>
+    <div class="daily-row__pollen">
+      <p>Wind</p>
+      <p>{{ day.day.maxwind_mph }}</p>
+    </div>
+  </li>
+</ul>

@@ -14,7 +14,8 @@ const DIST_FOLDER = join(process.cwd(), 'dist');
 const app = express();
 
 const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
-const { AppServerModuleNgFactory } = require('../dist/server/main.bundle');
+console.log(__dirname);
+const { AppServerModuleNgFactory } = require(__dirname + '/../dist/server/main.bundle');
 
 app.engine('html', (_, options, callback) => {
   const opts = { document: template, url: options.req.url };

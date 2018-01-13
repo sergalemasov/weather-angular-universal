@@ -49,7 +49,6 @@ export class IndexComponent implements OnInit {
       this.http.get('https://api.apixu.com/v1/forecast.json?key=3a290489ec4e439ab7d150803181301&q=Izhevsk&days=8')
     )
       .subscribe(data => {
-        console.log(JSON.stringify(data, null, 2));
         this.requested = data[0];
         this.requestedForecast = data[1];
 

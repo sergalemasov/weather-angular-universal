@@ -5,8 +5,7 @@
   "scripts": {
     "ng": "ng",
     "dev": "ng serve",
-    "start": "node dist/server.js",
-    "postinstall": "npm run build",
+    "start": "npm run build & node dist/server.js",
     "build": "npm run build:client & npm run build:aot & npm run build:server",
     "build:client": "ng build -prod --build-optimizer --app 0",
     "build:aot": "ng build --aot --app 1",

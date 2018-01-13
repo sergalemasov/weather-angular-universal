@@ -4,12 +4,12 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 @Pipe({name: 'auDay'})
 export class DayPipe implements PipeTransform {
-  public transform(rawDate: number): string {
-    if (!rawDate) {
+  public transform(epochDateSeconds: number): string {
+    if (!epochDateSeconds) {
       return '';
     }
 
-    const date = new Date(rawDate);
+    const date = new Date(epochDateSeconds * 1000);
     const now = new Date();
 
     if (date.toDateString() === now.toDateString()) {

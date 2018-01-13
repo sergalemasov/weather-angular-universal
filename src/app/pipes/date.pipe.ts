@@ -6,12 +6,12 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 @Pipe({name: 'auDate'})
 export class DatePipe implements PipeTransform {
-  public transform(rawDate: number): string {
-    if (!rawDate) {
+  public transform(epochDateSeconds: number): string {
+    if (!epochDateSeconds) {
       return '';
     }
 
-    const date = new Date(rawDate);
+    const date = new Date(epochDateSeconds * 1000);
     const dayName = days[date.getDay()];
 
     const day = date.getDate();

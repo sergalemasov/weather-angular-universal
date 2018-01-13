@@ -1,6 +1,6 @@
 <h1>{{ requested.location.name }}, {{ requested.location.region }}</h1>
 <div>
-  <p>{{ requested.location.localtime | auDate }}</p>
+  <p>{{ requested.location.localtime_epoch | auDate }}</p>
   <p>Overcast</p>
 </div>
 <section class="today">
@@ -28,7 +28,7 @@
 </section>
 <ul class="daily" *ngIf="requestedForecast.forecast.forecastday.length">
   <li class="daily-row" *ngFor="let day of requestedForecast.forecast.forecastday">
-    <p class="daily-row__day">{{ day.date | auDay }}</p>
+    <p class="daily-row__day">{{ day.date_epoch | auDay }}</p>
     <div class="daily-row__icon-wrapper">
       <img class="daily-row__icon" [src]="'https://' + day.day.condition.icon"/>
     </div>

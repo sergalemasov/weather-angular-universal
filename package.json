@@ -7,7 +7,7 @@
     "dev": "ng serve",
     "start": "node dist/server.js",
     "postinstall": "npm run build",
-    "build": "npm-run-all build:client build:aot build:server",
+    "build": "./node_modules/.bin/npm-run-all build:client build:aot build:server",
     "build:client": "ng build -prod --build-optimizer --app 0",
     "build:aot": "ng build --aot --app 1",
     "build:server": "webpack -p",
